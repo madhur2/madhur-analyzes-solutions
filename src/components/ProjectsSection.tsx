@@ -1,11 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Target, Zap, Users } from "lucide-react";
+import { ExternalLink, Target, Zap, Users, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectsSection = () => {
+  const navigate = useNavigate();
+  
   const projects = [
     {
+      slug: "scada-iot-uplift",
       title: "SCADA & IoT System Uplift",
       company: "SA Water",
       description: "Led end-to-end transformation of critical water infrastructure monitoring systems",
@@ -16,6 +20,7 @@ const ProjectsSection = () => {
       icon: <Zap className="w-6 h-6" />
     },
     {
+      slug: "ai-demand-optimization",
       title: "AI-Based Demand & Sales Optimization",
       company: "Complexica",
       description: "Delivered AI-powered platforms for demand forecasting and sales optimization across retail and manufacturing clients",
@@ -26,6 +31,7 @@ const ProjectsSection = () => {
       icon: <Target className="w-6 h-6" />
     },
     {
+      slug: "conversational-ai-chatbot",
       title: "Conversational AI Chatbot",
       company: "Propic",
       description: "Built intelligent chatbot for real estate lead management and customer engagement",
@@ -51,15 +57,16 @@ const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
-            <Card key={index} className="h-full flex flex-col shadow-card hover:shadow-hover transition-all duration-300">
+            <Card key={index} className="h-full flex flex-col shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer group"
+                  onClick={() => navigate(`/projects/${project.slug}`)}>
               <CardHeader>
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                     {project.icon}
                   </div>
                   <Badge variant="secondary">{project.company}</Badge>
                 </div>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                 <CardDescription className="text-base">
                   {project.description}
                 </CardDescription>
@@ -94,6 +101,11 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               </CardContent>
+              <CardFooter>
+                <Button variant="link" className="p-0 h-auto group-hover:text-primary transition-colors">
+                  Read Case Study <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </CardFooter>
             </Card>
           ))}
         </div>
@@ -102,7 +114,7 @@ const ProjectsSection = () => {
           <p className="text-muted-foreground mb-6">
             Interested in learning more about my approach to business analysis and project delivery?
           </p>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={() => navigate('/projects')}>
             <ExternalLink size={16} />
             View Full Case Studies
           </Button>

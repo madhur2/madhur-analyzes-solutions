@@ -108,5 +108,46 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    line-height: 1.6;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold text-foreground mt-8 mb-4;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold text-foreground mt-6 mb-3;
+  }
+
+  .prose h4 {
+    @apply text-lg font-medium text-foreground mt-4 mb-2;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose ul {
+    @apply mb-4 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-6 py-2 my-6 italic bg-muted/30 rounded-r-lg;
+  }
+
+  .prose hr {
+    @apply border-t border-border my-8;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose em {
+    @apply italic;
   }
 }
