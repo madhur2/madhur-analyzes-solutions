@@ -54,12 +54,66 @@ npm run dev
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
+Madhur Analyzes Solutions
+
+A modern web app built with Vite, React, and Tailwind CSS.
+
+## Development
+
+### Start Dev Server
+```
+npm run dev
+```
+
+### Using Docker Compose (Live Reload)
+```
+docker-compose up
+```
+
+## Testing
+
+### Run Tests (if configured)
+```
+npm test
+```
+
+## Debugging
+
+- Use browser dev tools for frontend debugging.
+- For container logs:
+```
+docker-compose logs web
+```
+- For shell access inside container:
+```
+docker-compose exec web sh
+```
+
+## Deployment
+
+### Build for Production
+```
+npm run build
+```
+
+### Run Production Server (example)
+```
+npm run preview
+```
+
+### Build Docker Image
+```
+docker build -t madhur-analyzes-solutions .
+```
+
+### Run Container
+```
+docker run -p 5173:5173 madhur-analyzes-solutions
+```
+
+---
+For more details, see the Dockerfile and docker-compose.yml.
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/e0923296-a097-431d-833d-ec1d27a49459) and click on Share -> Publish.

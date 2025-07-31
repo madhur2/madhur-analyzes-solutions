@@ -1,5 +1,12 @@
+import React, { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+import { Mail, MapPin, Phone, Linkedin, Briefcase, Send } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
