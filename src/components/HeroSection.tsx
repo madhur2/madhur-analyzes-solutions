@@ -17,12 +17,12 @@ const HeroSection = () => {
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-4 leading-[1.1]">
             Madhur Mulchandani
-            <span className="bg-gradient-hero bg-clip-text text-transparent block">
-              Business Analyst & Digital Transformation Expert
-            </span>
           </h1>
+          <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-8">
+            Business Analyst & Digital Transformation Expert
+          </h2>
           
           {/* One-liner */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto">
@@ -31,12 +31,11 @@ const HeroSection = () => {
           </p>
 
           {/* Personal Quote */}
-          <div className="mb-12 p-8 bg-card/50 rounded-lg border border-primary/10 max-w-3xl mx-auto">
-            <blockquote className="text-lg text-foreground italic">
-              "I believe the best technology solutions come from truly understanding the people and processes they're meant to serve. 
-              My passion lies in bridging that gap – translating complex business needs into elegant, practical solutions that deliver real value."
-            </blockquote>
-            <cite className="block mt-4 text-sm text-muted-foreground not-italic">– Madhur Mulchandani</cite>
+          <div className="mb-12 p-6 bg-card/30 rounded-lg border border-primary/5 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground">
+              I focus on understanding the real business problem before jumping to solutions. 
+              Whether it's streamlining processes or implementing new technology, the best outcomes come from getting the fundamentals right.
+            </p>
           </div>
 
           {/* Single CTA */}
