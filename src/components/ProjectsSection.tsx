@@ -48,7 +48,7 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Featured Projects
+            Featured Case Studies
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real-world case studies showcasing end-to-end delivery from requirements to results
@@ -110,11 +110,11 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
+        <div className="text-center mt-16">
+          <p className="text-lg text-muted-foreground mb-6">
             Interested in learning more about my approach to business analysis and project delivery?
           </p>
-          <Button variant="outline" size="lg" onClick={() => navigate('/projects')}>
+          <Button variant="default" size="lg" onClick={() => navigate('/projects')} className="min-w-[200px]">
             <ExternalLink size={16} />
             View Full Case Studies
           </Button>

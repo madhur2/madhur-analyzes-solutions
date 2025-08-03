@@ -1,8 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Calendar, Users, Target, Zap } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Target, Zap, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -10,25 +11,43 @@ const ProjectDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  const handleBackClick = () => {
+    // Simple approach - always go back to homepage for now
+    // You can enhance this later with URL state if needed
+    navigate('/');
+  };
+
   const projects = {
     "scada-iot-uplift": {
       title: "SCADA & IoT System Uplift",
       company: "SA Water",
-      description: "Led end-to-end transformation of critical water infrastructure monitoring systems",
-      challenge: "Legacy SCADA systems required modernization to improve operational efficiency and real-time monitoring capabilities across multiple water treatment facilities. The existing infrastructure was fragmented, with limited integration between different monitoring systems, making it difficult to get a holistic view of operations.",
-      action: "Conducted comprehensive stakeholder analysis and facilitated workshops with operations teams, IT, and management. Mapped current-state processes across 15+ facilities, identified pain points and integration opportunities. Designed future-state architecture with modern IoT sensors and centralized monitoring. Coordinated agile delivery across multiple vendor teams, ensuring seamless integration while maintaining 24/7 operations.",
-      impact: "Improved system reliability by 40%, reduced response times to critical alerts from 30 minutes to under 5 minutes, and enabled predictive maintenance capabilities that prevented 3 major equipment failures in the first 6 months. The new system processes over 10,000 data points per minute and provides real-time dashboards for operational teams.",
-      technologies: ["SCADA Systems", "IoT Sensors", "Process Mapping", "Stakeholder Management", "Agile Delivery", "Data Integration"],
+      description: "Led end-to-end transformation of water infrastructure monitoring during operator transition",
+      challenge: "This project involved transitioning multiple water treatment sites from a legacy operator to in-house control, with a focus on uplifting SCADA and IoT infrastructure to align with our organisation's standards. The legacy systems were outdated and inconsistent across sites, making it difficult to achieve reliable real-time monitoring and operational efficiency. The transition also required preparing a robust set of SCADA requirements for an upcoming Request for Proposal (RFP) to be issued to our panel of SCADA integrators.",
+      action: "As the sole Business Analyst, I led the end-to-end analysis and requirements process from early-stage discovery and stakeholder mapping to the definition of functional/non-functional requirements and final documentation for the RFP pack. Conducted ~5 one-on-one interviews and 5 structured workshops with key groups including engineering, SCADA leads, technical SMEs, the program manager, networking team, solution architect, and operations managers. Created comprehensive stakeholder maps, reviewed legacy SCADA documentation, network diagrams, and operator frameworks. Participated in technical evaluations of key 'model' treatment sites to identify infrastructure gaps between the legacy and future-state SCADA standard. Consolidated feedback into structured functional and non-functional requirements, with traceability to use cases and assessment findings.",
+      impact: "Successfully defined and validated requirements for SCADA transition across 15+ treatment facilities. Reduced ambiguity for the integration panel and improved assessment accuracy during RFP stage. Enabled alignment across IT/OT teams on network and hardware uplift needs. Enhanced organisation's visibility into legacy vs target-state architecture. Built stakeholder confidence in the transition process through structured analysis and collaborative engagement.",
+      technologies: ["SCADA Systems & Architecture", "IoT Sensors & Monitoring", "Agile Delivery", "Stakeholder Management", "Process Mapping", "Document Analysis", "Water Infrastructure Domain Knowledge"],
       icon: <Zap className="w-6 h-6" />,
-      timeline: "18 months",
-      teamSize: "12 people across 4 teams",
-      budget: "$2.5M AUD",
+      timeline: "6 months",
+      teamSize: "Sole Business Analyst with cross-functional stakeholders",
+      budget: "RFP preparation phase",
       outcomes: [
-        "40% improvement in system reliability",
-        "83% reduction in response times to critical alerts",
-        "Prevented $500K+ in potential equipment failures",
-        "Enabled predictive maintenance across 15+ facilities",
-        "Real-time processing of 10,000+ data points per minute"
+        "Successfully defined requirements for 15+ treatment facilities",
+        "Reduced ambiguity for integration panel during RFP stage",
+        "Enabled IT/OT team alignment on network and hardware needs",
+        "Enhanced visibility into legacy vs target-state architecture",
+        "Built stakeholder confidence through structured analysis"
+      ],
+      deliverables: [
+        "Project Charter",
+        "RFP Requirements Specification", 
+        "Functional and Non-Functional Requirements",
+        "FABC (Functional Area Breakdown Chart)",
+        "Preliminary Project Management Plan (PMP)"
       ]
     },
     "ai-demand-optimization": {
@@ -49,7 +68,8 @@ const ProjectDetail = () => {
         "30% reduction in inventory waste",
         "50,000+ SKUs processed daily",
         "Deployed across 12 major retailers"
-      ]
+      ],
+      deliverables: []
     },
     "conversational-ai-chatbot": {
       title: "Conversational AI Chatbot",
@@ -69,7 +89,8 @@ const ProjectDetail = () => {
         "Customer satisfaction improved from 3.2 to 4.6/5",
         "500+ inquiries handled monthly",
         "1,200+ leads qualified for sales team"
-      ]
+      ],
+      deliverables: []
     }
   };
 
@@ -80,10 +101,10 @@ const ProjectDetail = () => {
       <div className="min-h-screen">
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
-          <h1 className="text-2xl font-bold mb-4">Project Not Found</h1>
-          <Button onClick={() => navigate('/projects')}>
+          <h1 className="text-2xl font-bold mb-4">Case Study Not Found</h1>
+          <Button onClick={handleBackClick}>
             <ArrowLeft size={16} />
-            Back to Projects
+            Back
           </Button>
         </div>
         <Footer />
@@ -99,11 +120,11 @@ const ProjectDetail = () => {
           {/* Back Button */}
           <Button 
             variant="outline" 
-            onClick={() => navigate('/projects')}
+            onClick={handleBackClick}
             className="mb-8"
           >
             <ArrowLeft size={16} />
-            Back to Projects
+            Back
           </Button>
 
           {/* Project Header */}
@@ -193,6 +214,24 @@ const ProjectDetail = () => {
                   </div>
                 </CardContent>
               </Card>
+
+              {project.deliverables && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-xl">Key Deliverables</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {project.deliverables.map((deliverable, index) => (
+                        <div key={index} className="text-sm text-muted-foreground flex items-start">
+                          <span className="text-primary mr-2">•</span>
+                          {deliverable}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </div>
           </div>
 

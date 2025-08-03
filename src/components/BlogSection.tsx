@@ -70,11 +70,13 @@ const BlogSection = () => {
               <CardDescription className="text-base">{blogPosts[0].excerpt}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {blogPosts[0].tags.map((tag, index) => (
-                  <Badge key={index} variant="secondary">{tag}</Badge>
-                ))}
-              </div>
+                             <div className="flex flex-wrap gap-2 mb-4">
+                 {blogPosts[0].tags.map((tag, index) => (
+                   <Badge key={index} variant="secondary">
+                     {tag}
+                   </Badge>
+                 ))}
+               </div>
               <Button variant="link" className="p-0 h-auto group-hover:text-primary transition-colors">
                 Read More <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -102,11 +104,13 @@ const BlogSection = () => {
                   <CardDescription>{post.excerpt}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline" className="text-xs">{tag}</Badge>
-                    ))}
-                  </div>
+                                     <div className="flex flex-wrap gap-2 mb-4">
+                     {post.tags.map((tag, tagIndex) => (
+                       <Badge key={tagIndex} variant="outline" className="text-xs">
+                         {tag}
+                       </Badge>
+                     ))}
+                   </div>
                   <Button variant="link" className="p-0 h-auto group-hover:text-primary transition-colors">
                     Read More <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -116,11 +120,11 @@ const BlogSection = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-6">
+        <div className="text-center mt-16">
+          <p className="text-lg text-muted-foreground mb-6">
             Want to stay updated with my latest insights?
           </p>
-          <Button variant="outline" size="lg" onClick={() => navigate('/blog')}>
+          <Button variant="default" size="lg" onClick={() => navigate('/blog')} className="min-w-[200px]">
             <ArrowRight size={16} />
             View All Posts
           </Button>

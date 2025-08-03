@@ -45,11 +45,10 @@ const AllBlog = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Insights & Analysis
+                All Insights
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Practical insights on business analysis, digital transformation, and driving real outcomes through technology. 
-                Thoughts from the trenches of enterprise projects and AI implementations.
+                Comprehensive collection of business analysis insights and digital transformation perspectives
               </p>
             </div>
 
@@ -129,27 +128,14 @@ const AllBlog = () => {
             </div>
 
             <div className="text-center mt-16">
-              <div className="bg-card p-8 rounded-lg shadow-card max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold mb-4">Let's discuss these ideas</h3>
-                <p className="text-muted-foreground mb-6">
-                  Found something interesting? I'd love to hear your thoughts and experiences. 
-                  Whether you agree, disagree, or have questions, let's start a conversation.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    variant="default" 
-                    onClick={() => navigate('/#contact')}
-                  >
-                    Get In Touch
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    onClick={() => navigate('/')}
-                  >
-                    Back to Homepage
-                  </Button>
-                </div>
-              </div>
+              <Button 
+                variant="outline" 
+                onClick={() => navigate('/')}
+                className="mb-8"
+              >
+                <ArrowRight size={16} className="mr-2 rotate-180" />
+                Back to Homepage
+              </Button>
             </div>
           </div>
         </section>

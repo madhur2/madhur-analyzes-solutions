@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Calendar, BookOpen, Clock, User } from "lucide-react";
@@ -8,6 +9,18 @@ import Footer from "@/components/Footer";
 const BlogPost = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const location = window.location;
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
+
+  const handleBackClick = () => {
+    // Simple approach - always go back to homepage for now
+    // You can enhance this later with URL state if needed
+    navigate('/');
+  };
 
   const blogPosts = {
     "requirements-to-results-agile": {
@@ -284,11 +297,11 @@ const BlogPost = () => {
           {/* Back Button */}
           <Button 
             variant="outline" 
-            onClick={() => navigate('/blog')}
+            onClick={handleBackClick}
             className="mb-8"
           >
             <ArrowLeft size={16} />
-            Back to Blog
+            Back
           </Button>
 
           {/* Article Header */}
@@ -347,14 +360,8 @@ const BlogPost = () => {
           {/* CTA Section */}
           <div className="max-w-4xl mx-auto mt-16 text-center bg-gradient-subtle p-8 rounded-lg">
             <h3 className="text-2xl font-bold mb-4">Enjoyed this insight?</h3>
-            <p className="text-muted-foreground mb-6">Let's connect and discuss how these concepts might apply to your projects.</p>
+            <p className="text-muted-foreground mb-6">Check out more insights and analysis on business transformation.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                variant="default" 
-                onClick={() => navigate('/#contact')}
-              >
-                Start a Conversation
-              </Button>
               <Button 
                 variant="outline" 
                 onClick={() => navigate('/blog')}

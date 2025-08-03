@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
+    import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Download, Mail, Phone, Users, Target, BarChart3, Handshake } from "lucide-react";
 import profileImage from "@/assets/madhur-profile.jpg";
 
 const HeroSection = () => {
@@ -12,8 +12,22 @@ const HeroSection = () => {
   };
 
   const handleDownloadCV = () => {
-    // In a real implementation, this would download a PDF
-    console.log("Downloading CV...");
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Madhur_Mulchandani_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleEmailClick = () => {
+    window.open('mailto:mulchandanimadhur2@gmail.com', '_blank');
+  };
+
+  const handlePhoneClick = () => {
+    // This will show a phone number image - you can upload the image later
+    alert("Phone number image will be displayed here. Please upload your phone number image.");
   };
 
   return (
@@ -37,32 +51,49 @@ const HeroSection = () => {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             5+ years driving tech-enabled solutions across utilities, AI platforms, and enterprise systems. 
             From discovery and stakeholder workshops to agile delivery and testing.
           </p>
 
-          {/* Personal Quote */}
-          <div className="bg-card/50 p-6 rounded-lg mb-8 max-w-2xl mx-auto border border-primary/10">
-            <p className="text-lg italic text-muted-foreground mb-2">
-              "I'm passionate about bridging the gap between complex technology and real business value. 
-              Every project is an opportunity to solve meaningful problems and create lasting impact."
-            </p>
-            <p className="text-sm font-medium text-primary">— Madhur Mulchandani</p>
-          </div>
-
-          {/* Key Strengths */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
-            {[
-              "Stakeholder Engagement",
-              "Business Process Mapping", 
-              "Data-Driven Insights",
-              "Cross-Functional Collaboration"
-            ].map((strength, index) => (
-              <div key={index} className="bg-card p-4 rounded-lg shadow-card">
-                <p className="text-sm font-medium text-card-foreground">{strength}</p>
-              </div>
-            ))}
+          {/* Services */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Services I Provide</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              {[
+                {
+                  title: "Stakeholder Engagement",
+                  icon: Users,
+                  description: "Facilitate workshops and build consensus across diverse teams"
+                },
+                {
+                  title: "Business Process Mapping",
+                  icon: Target,
+                  description: "Analyze and optimize workflows for maximum efficiency"
+                },
+                {
+                  title: "Data-Driven Insights",
+                  icon: BarChart3,
+                  description: "Transform data into actionable business intelligence"
+                },
+                {
+                  title: "Cross-Functional Collaboration",
+                  icon: Handshake,
+                  description: "Bridge gaps between technical and business teams"
+                }
+              ].map((service, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  className="h-auto p-6 flex flex-col items-center text-center hover:bg-accent/50 transition-all duration-200 group"
+                  onClick={() => scrollToSection('contact')}
+                >
+                  <service.icon size={32} className="text-primary mb-3 group-hover:scale-110 transition-transform" />
+                  <h4 className="font-semibold text-foreground mb-2">{service.title}</h4>
+                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                </Button>
+              ))}
+            </div>
           </div>
 
           {/* Location & Availability */}
@@ -93,16 +124,28 @@ const HeroSection = () => {
           </div>
 
           {/* Quick Contact */}
-          <div className="mt-8 pt-8 border-t">
-            <p className="text-muted-foreground mb-4">Ready to discuss your next project?</p>
-            <Button 
-              variant="link" 
-              onClick={() => scrollToSection('contact')}
-              className="text-lg"
-            >
-              <Mail size={20} />
-              Let's Connect
-            </Button>
+          <div className="mt-12 pt-8 border-t">
+            <p className="text-muted-foreground mb-6 text-lg">Ready to discuss your next project?</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                variant="default" 
+                onClick={handleEmailClick}
+                size="lg"
+                className="min-w-[160px]"
+              >
+                <Mail size={20} />
+                Email Me
+              </Button>
+              <Button 
+                variant="outline" 
+                onClick={handlePhoneClick}
+                size="lg"
+                className="min-w-[160px]"
+              >
+                <Phone size={20} />
+                Call Me
+              </Button>
+            </div>
           </div>
         </div>
       </div>

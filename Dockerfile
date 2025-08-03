@@ -10,8 +10,7 @@ RUN npm install -g vite
 COPY package.json package-lock.json* bun.lockb* ./
 
 
-# Install bun if bun.lockb exists, otherwise use npm
-RUN if [ -f "bun.lockb" ]; then npm install -g bun && bun install; else npm install; fi
+RUN if [ -f "bun.lockb" ]; then npm install -g bun && bun install; else npm ci; fi
 
 # Expose port (Vite default is 8080)
 EXPOSE 8080

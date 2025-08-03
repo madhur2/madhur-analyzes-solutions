@@ -5,8 +5,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const handleDownloadCV = () => {
-    // In a real implementation, this would download a PDF
-    console.log("Downloading CV...");
+    // Create a link element and trigger download
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Madhur_Mulchandani_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -22,7 +27,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <a 
-                href="https://linkedin.com/in/madhur-mulchandani" 
+                href="https://www.linkedin.com/in/madhur16/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
@@ -30,7 +35,7 @@ const Footer = () => {
                 <Linkedin size={20} className="text-muted-foreground" />
               </a>
               <a 
-                href="mailto:madhur.mulchandani@email.com"
+                href="mailto:mulchandanimadhur2@gmail.com"
                 className="p-2 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
               >
                 <Mail size={20} className="text-muted-foreground" />
@@ -46,7 +51,7 @@ const Footer = () => {
                 About Me
               </a>
               <a href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                Projects
+                Case Studies
               </a>
               <a href="#blog" className="text-muted-foreground hover:text-foreground transition-colors">
                 Blog
@@ -69,7 +74,7 @@ const Footer = () => {
                 Download CV
               </Button>
               <Button variant="outline" size="sm" asChild className="w-full">
-                <a href="mailto:madhur.mulchandani@email.com">
+                <a href="mailto:mulchandanimadhur2@gmail.com">
                   <Mail size={16} />
                   Get in Touch
                 </a>
