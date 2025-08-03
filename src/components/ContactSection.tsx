@@ -53,31 +53,25 @@ const ContactSection = () => {
             </div>
 
             <div className="p-8 bg-gradient-subtle rounded-lg border text-center">
-              <h4 className="text-2xl font-bold text-foreground mb-4">Areas of Expertise</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">Digital Transformation & Business Analysis</span>
+              <h4 className="text-2xl font-bold text-foreground mb-4">Services I Provide</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left justify-center mx-auto max-w-2xl">
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• Digital Transformation & Business Analysis</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">SCADA/IoT Systems & Infrastructure</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• SCADA/IoT Systems & Infrastructure</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">AI/ML Product Design & Implementation</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• AI/ML Product Design & Implementation</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">Agile Delivery & Stakeholder Management</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• Agile Delivery & Stakeholder Management</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">Process Mapping & Requirements Engineering</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• Process Mapping & Requirements Engineering</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-foreground font-medium">Data Analytics & Business Intelligence</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-foreground font-medium">• Data Analytics & Business Intelligence</span>
                 </div>
               </div>
             </div>
@@ -89,15 +83,15 @@ const ContactSection = () => {
                 Let's discuss how I can help drive your digital transformation and deliver measurable business outcomes.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  variant="hero" 
-                  size="lg" 
-                  onClick={() => window.open('mailto:mulchandanimadhur2@gmail.com', '_blank')}
-                  className="min-w-[200px]"
-                >
-                  <Mail size={20} />
-                  Start a Conversation
-                </Button>
+                <a href="mailto:mulchandanimadhur2@gmail.com" className="min-w-[200px]">
+                  <Button 
+                    variant="hero" 
+                    size="lg" 
+                  >
+                    <Mail size={20} />
+                    Get in Touch
+                  </Button>
+                </a>
                 <Button 
                   variant="outline" 
                   size="lg" 

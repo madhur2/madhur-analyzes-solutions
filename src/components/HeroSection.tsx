@@ -59,7 +59,7 @@ const HeroSection = () => {
           {/* Services */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-foreground mb-6">Services I Provide</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
                 {
                   title: "Stakeholder Engagement",
@@ -82,16 +82,14 @@ const HeroSection = () => {
                   description: "Bridge gaps between technical and business teams"
                 }
               ].map((service, index) => (
-                <Button
+                <div
                   key={index}
-                  variant="outline"
-                  className="h-auto p-6 flex flex-col items-center text-center hover:bg-accent/50 transition-all duration-200 group"
-                  onClick={() => scrollToSection('contact')}
+                  className="h-auto p-6 flex flex-col items-center text-center bg-card rounded-lg shadow-card"
                 >
-                  <service.icon size={32} className="text-primary mb-3 group-hover:scale-110 transition-transform" />
+                  <service.icon size={32} className="text-primary mb-3" />
                   <h4 className="font-semibold text-foreground mb-2">{service.title}</h4>
                   <p className="text-sm text-muted-foreground">{service.description}</p>
-                </Button>
+                </div>
               ))}
             </div>
           </div>
@@ -102,12 +100,12 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-wrap gap-4 justify-center items-center mt-8">
             <Button 
               variant="hero" 
               size="xl" 
               onClick={handleDownloadCV}
-              className="min-w-[200px]"
+              className="min-w-[180px]"
             >
               <Download size={20} />
               Download CV
@@ -116,36 +114,35 @@ const HeroSection = () => {
               variant="outline" 
               size="xl" 
               onClick={() => scrollToSection('projects')}
-              className="min-w-[200px]"
+              className="min-w-[180px]"
             >
               See My Work
               <ArrowRight size={20} />
+            </Button>
+            <a href="mailto:mulchandanimadhur2@gmail.com">
+              <Button 
+                variant="default" 
+                size="xl"
+                className="min-w-[180px]"
+              >
+                <Mail size={20} />
+                Email Me
+              </Button>
+            </a>
+            <Button 
+              variant="outline" 
+              size="xl" 
+              onClick={handlePhoneClick}
+              className="min-w-[180px]"
+            >
+              <Phone size={20} />
+              Call Me
             </Button>
           </div>
 
           {/* Quick Contact */}
           <div className="mt-12 pt-8 border-t">
             <p className="text-muted-foreground mb-6 text-lg">Ready to discuss your next project?</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                variant="default" 
-                onClick={handleEmailClick}
-                size="lg"
-                className="min-w-[160px]"
-              >
-                <Mail size={20} />
-                Email Me
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={handlePhoneClick}
-                size="lg"
-                className="min-w-[160px]"
-              >
-                <Phone size={20} />
-                Call Me
-              </Button>
-            </div>
           </div>
         </div>
       </div>
