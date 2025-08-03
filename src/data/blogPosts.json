@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "requirements-to-results-agile",
+    "title": "From Requirements to Results: How BAs Bridge the Gap in Agile Projects",
+    "excerpt": "Exploring the critical role of business analysts in agile transformations and how to ensure requirements translate into real business value.",
+    "date": "2024-01-15",
+    "readTime": "5 min read",
+    "tags": ["Business Analysis", "Agile", "Digital Transformation"],
+    "featured": true,
+    "content": "# From Requirements to Results: How BAs Bridge the Gap in Agile Projects\n\nIn today's fast-paced digital landscape, the role of a Business Analyst has evolved significantly...\n\n## The Evolving Role of BAs in Agile\n\nTraditional waterfall approaches often led to requirements being documented upfront and then 'thrown over the wall' to development teams. In agile environments, Business Analysts become continuous facilitators of understanding...\n\n## Key Strategies for Success\n\n1. **Continuous Stakeholder Engagement**\n2. **Iterative Requirements Refinement**\n3. **Value-Driven Prioritization**\n4. **Collaborative Solution Design**\n\nThe success of any digital transformation hinges on how well requirements are understood, communicated, and translated into working solutions."
+  },
+  {
+    "slug": "stakeholder-engagement-enterprise",
+    "title": "The Art of Stakeholder Engagement in Complex Enterprise Projects",
+    "excerpt": "Practical strategies for managing diverse stakeholder groups and maintaining alignment throughout large-scale technology implementations.",
+    "date": "2024-01-08",
+    "readTime": "7 min read",
+    "tags": ["Stakeholder Management", "Enterprise", "Communication"],
+    "featured": false,
+    "content": "# The Art of Stakeholder Engagement in Complex Enterprise Projects\n\nManaging stakeholders in enterprise environments requires a delicate balance of diplomacy, technical understanding, and strategic thinking...\n\n## Understanding Your Stakeholder Ecosystem\n\nEvery enterprise project involves multiple stakeholder groups with varying interests, priorities, and levels of technical understanding...\n\n## Building Consensus Through Structured Workshops\n\nOne of the most effective tools in my toolkit has been the facilitated workshop...\n\n## Key Takeaways\n\n- Map your stakeholder landscape early\n- Establish clear communication channels\n- Use visual tools to build shared understanding\n- Regular check-ins prevent scope creep"
+  },
+  {
+    "slug": "ai-product-design-ba-perspective",
+    "title": "AI Product Design: A Business Analyst's Perspective",
+    "excerpt": "How traditional BA skills apply to AI product development, with insights from building demand forecasting and conversational AI platforms.",
+    "date": "2024-01-02",
+    "readTime": "6 min read",
+    "tags": ["AI/ML", "Product Design", "Innovation"],
+    "featured": false,
+    "content": "# AI Product Design: A Business Analyst's Perspective\n\nWorking on AI products at Complexica and Propic taught me that traditional BA skills are not only relevant but essential for successful AI implementation...\n\n## The Unique Challenges of AI Projects\n\nAI projects come with inherent uncertainties that traditional projects don't face...\n\n## Bridging the Gap Between Data Science and Business Value\n\nOne of the key challenges I've observed is the disconnect between what's technically possible and what delivers business value...\n\n## Lessons Learned\n\n1. Start with the business problem, not the technology\n2. Manage expectations around AI capabilities\n3. Plan for iterative model improvement\n4. Focus on user adoption from day one"
+  }
+]

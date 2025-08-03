@@ -5,37 +5,10 @@ import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import blogPostsData from "@/data/blogPosts.json";
 
 const AllBlog = () => {
   const navigate = useNavigate();
-
-  const blogPosts = [
-    {
-      slug: "requirements-to-results-agile",
-      title: "From Requirements to Results: How BAs Bridge the Gap in Agile Projects",
-      excerpt: "Exploring the critical role of business analysts in agile transformations and how to ensure requirements translate into real business value.",
-      date: "2024-01-15",
-      readTime: "5 min read",
-      tags: ["Business Analysis", "Agile", "Digital Transformation"],
-      featured: true
-    },
-    {
-      slug: "stakeholder-engagement-enterprise",
-      title: "The Art of Stakeholder Engagement in Complex Enterprise Projects",
-      excerpt: "Practical strategies for managing diverse stakeholder groups and maintaining alignment throughout large-scale technology implementations.",
-      date: "2024-01-08",
-      readTime: "7 min read",
-      tags: ["Stakeholder Management", "Enterprise", "Communication"]
-    },
-    {
-      slug: "ai-product-design-ba-perspective",
-      title: "AI Product Design: A Business Analyst's Perspective",
-      excerpt: "How traditional BA skills apply to AI product development, with insights from building demand forecasting and conversational AI platforms.",
-      date: "2024-01-02",
-      readTime: "6 min read",
-      tags: ["AI/ML", "Product Design", "Innovation"]
-    }
-  ];
 
   return (
     <div className="min-h-screen">
@@ -54,7 +27,7 @@ const AllBlog = () => {
 
             <div className="max-w-4xl mx-auto">
               {/* Featured Post */}
-              {blogPosts.filter(post => post.featured).map((post, index) => (
+              {blogPostsData.filter(post => post.featured).map((post, index) => (
                 <Card key={index} className="mb-8 shadow-card hover:shadow-hover transition-all duration-300 border-l-4 border-l-primary cursor-pointer group"
                       onClick={() => navigate(`/blog/${post.slug}`)}>
                   <CardHeader>
@@ -92,7 +65,7 @@ const AllBlog = () => {
 
               {/* Other Posts */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {blogPosts.filter(post => !post.featured).map((post, index) => (
+                {blogPostsData.filter(post => !post.featured).map((post, index) => (
                   <Card key={index} className="shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer group"
                         onClick={() => navigate(`/blog/${post.slug}`)}>
                     <CardHeader>

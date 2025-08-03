@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "scada-iot-uplift",
+    "title": "SCADA & Infrastructure Uplift",
+    "company": "SA Water",
+    "description": "Led end-to-end transformation of critical water infrastructure monitoring systems",
+    "shortDescription": "Modernized legacy SCADA systems for improved operational efficiency and real-time monitoring",
+    "challenge": "Legacy SCADA systems required modernization to improve operational efficiency and real-time monitoring capabilities across water infrastructure",
+    "action": "Facilitated stakeholder workshops, mapped current-state processes, designed future-state architecture, and coordinated agile delivery across multiple teams",
+    "impact": "Improved system reliability by 40%, reduced response times to critical alerts, and enabled predictive maintenance capabilities",
+    "technologies": ["SCADA", "IoT", "Process Mapping", "Stakeholder Management"],
+    "timeline": "12 months",
+    "teamSize": "8-12 people"
+  },
+  {
+    "slug": "ai-supply-chain-optimization",
+    "title": "AI in Supply Chain Optimization",
+    "company": "Complexica",
+    "description": "Delivered AI-powered platforms for demand forecasting and sales optimization across retail and manufacturing clients",
+    "shortDescription": "Built AI platforms that improved forecast accuracy and reduced inventory waste for major clients",
+    "challenge": "Clients needed accurate demand forecasting and sales optimization to reduce waste and increase profitability across complex supply chains",
+    "action": "Conducted discovery sessions, defined business requirements, collaborated with data scientists on algorithm design, and managed UAT processes",
+    "impact": "Achieved 15-25% improvement in forecast accuracy, $2M+ in cost savings for key clients, and 30% reduction in inventory waste",
+    "technologies": ["AI/ML", "Demand Forecasting", "Data Analytics", "Agile Delivery"],
+    "timeline": "18 months",
+    "teamSize": "6-10 people"
+  },
+  {
+    "slug": "real-estate-ai-chatbot",
+    "title": "Real Estate AI Chatbot",
+    "company": "Propic",
+    "description": "Built intelligent chatbot for real estate lead management and customer engagement",
+    "shortDescription": "Developed conversational AI that transformed real estate lead qualification and customer support",
+    "challenge": "Real estate agents needed automated lead qualification and 24/7 customer support to improve conversion rates and response times",
+    "action": "Defined conversation flows, created user stories, collaborated with developers on NLP integration, and conducted extensive testing",
+    "impact": "Increased lead conversion by 35%, reduced response time to under 2 minutes, and improved customer satisfaction scores",
+    "technologies": ["Conversational AI", "NLP", "Lead Management", "User Experience"],
+    "timeline": "6 months",
+    "teamSize": "4-6 people"
+  },
+  {
+    "slug": "digital-startup-scaling",
+    "title": "Scaling a Digital Startup",
+    "company": "Fruit O Fresh",
+    "description": "Transformed startup operations through digital processes and automation",
+    "shortDescription": "Helped scale a food delivery startup by implementing digital processes and operational frameworks",
+    "challenge": "Fast-growing startup needed structured processes, automated workflows, and scalable systems to handle rapid expansion",
+    "action": "Designed operational frameworks, implemented digital workflows, established KPI tracking, and created scalable business processes",
+    "impact": "Enabled 300% business growth, reduced operational costs by 25%, and improved order processing efficiency by 60%",
+    "technologies": ["Process Automation", "Digital Transformation", "KPI Management", "Workflow Design"],
+    "timeline": "9 months",
+    "teamSize": "3-5 people"
+  }
+]
