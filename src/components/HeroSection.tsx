@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail } from "lucide-react";
-import profileImage from "@/assets/madhur-profile.jpg";
+import profileImage from "@/assets/WhatsApp Image 2025-12-12 at 11.56.36 AM.JPG";
 
 const HeroSection = () => {
   return (
